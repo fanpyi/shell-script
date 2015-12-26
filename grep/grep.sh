@@ -28,3 +28,6 @@ grep -wrih 'hello' ./
 grep -cwrih 'hello' ./
 grep -crih 'hello' ./
 grep -nrih 'hello' ./
+grep -oE 'aid":\d*'
+grep -E '\(?0\d{2}[)-]?\d{8}'
+ grep -E '\(0\d{2})\d{8}|0\d{2}[-]?\d{8}|0\d{3}\d{7}'
