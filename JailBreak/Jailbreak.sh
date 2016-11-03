@@ -8,11 +8,12 @@ then
 else
     mkdir $imagePath
 fi
-ipaPath=`ls | grep '.ipa'`
-unzip $ipaPath
-cd Payload
-appname=`ls`
-cd $appname
-mv `ls| grep -E '.png|.jpg'` ../../$imagePath
-cd ../..
-rm -rf iTunesArtwork iTunesMetadata.plist Payload
+ls | grep '.ipa' | while read line; do
+	unzip $line
+	cd Payload
+	appname=`ls`
+	cd $appname
+	mv `ls| grep -E '.png|.jpg'` ../../$imagePath
+	cd ../..
+	rm -rf iTunesArtwork iTunesMetadata.plist Payload
+done
